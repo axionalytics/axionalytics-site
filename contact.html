@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================================
+AXIONALYTICS - CONTACT PAGE (contact.html)
+Version: 2.0.0 | Last Updated: January 2026
+
+DEPLOYMENT: Ready for GitHub Pages
+FRAMEWORK: Tailwind CSS via CDN + Unified CSS (css/styles.css)
+JAVASCRIPT: Unified module (js/main.js)
+
+================================================================================
+UPDATE INSTRUCTIONS:
+================================================================================
+
+1. BOOKING LINKS (Google Calendar):
+   - Search for: href="#BOOKING_LINK"
+   - Replace with your Google Calendar appointment scheduling link
+   - Example: href="https://calendar.google.com/calendar/appointments/YOUR_LINK"
+
+2. SOCIAL MEDIA LINKS:
+   - Search for: href="#LINKEDIN", href="#WHATSAPP", href="#INSTAGRAM"
+   - Replace with your actual social media URLs
+
+3. CONTACT FORM BACKEND:
+   - The form currently shows a success message on submit
+   - Integrate with your preferred backend:
+     * Formspree: action="https://formspree.io/f/YOUR_ID"
+     * Netlify Forms: add data-netlify="true" to form
+     * Custom API: modify the JavaScript submit handler
+
+4. CONTACT EMAIL:
+   - Search for: info@axionalytics.com
+   - Replace with your preferred contact email
+
+5. PHONE NUMBER:
+   - Search for: +1 (956) 207-9368
+   - Replace with your actual phone number
+
+================================================================================
+PAGE SECTIONS:
+- Skip Link (Accessibility)
+- Header/Navigation (Unified)
+- Hero Section
+- Contact Methods Grid (Email, WhatsApp, Book Call)
+- Contact Form
+- FAQ Preview
+- Footer (Unified)
+================================================================================
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Axionalytics for a free 30-minute data assessment. Get ROI projections within 48 hours. Email, WhatsApp, or book a call.">
+    <meta name="keywords" content="contact, data analytics consultation, AI integration consultation, free assessment, business intelligence">
+    <meta name="author" content="Axionalytics">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Contact | Axionalytics">
+    <meta property="og:description" content="Get a free 30-minute data assessment. ROI projections within 48 hours.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.axionalytics.com/contact">
+    
+    <title>Contact | Axionalytics - Free Data Assessment</title>
+    
+    <!-- Favicon: Axionalytics data node/network logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='20' r='8' fill='%238B5CF6'/><circle cx='20' cy='80' r='8' fill='%232563EB'/><circle cx='80' cy='80' r='8' fill='%23F97316'/><line x1='50' y1='20' x2='20' y2='80' stroke='%231E3A5F' stroke-width='4'/><line x1='50' y1='20' x2='80' y2='80' stroke='%231E3A5F' stroke-width='4'/><line x1='20' y1='80' x2='80' y2='80' stroke='%231E3A5F' stroke-width='4'/></svg>">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'axio': {
+                            'primary': '#1E3A5F',
+                            'secondary': '#2563EB',
+                            'accent': '#F97316',
+                            'dark': '#0F172A',
+                            'charcoal': '#1E293B',
+                            'slate': '#334155',
+                            'light': '#F8FAFC',
+                            'purple': '#8B5CF6',
+                            'green': '#10B981',
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Plus Jakarta Sans', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Unified Stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Critical CSS Fallback (ensures content is visible even if external CSS/JS fails) -->
+    <style>
+        /* Bilingual system */
+        [data-lang-en] { display: inline !important; }
+        [data-lang-es] { display: none !important; }
+        div[data-lang-en], p[data-lang-en], h1[data-lang-en], h2[data-lang-en], h3[data-lang-en], h4[data-lang-en], li[data-lang-en] { display: block !important; }
+        html.lang-es [data-lang-en] { display: none !important; }
+        html.lang-es [data-lang-es] { display: inline !important; }
+        html.lang-es div[data-lang-es], html.lang-es p[data-lang-es], html.lang-es h1[data-lang-es], html.lang-es h2[data-lang-es], html.lang-es h3[data-lang-es], html.lang-es h4[data-lang-es], html.lang-es li[data-lang-es] { display: block !important; }
+    </style>
+    <!-- Remove fallback styles once JS loads -->
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        var style = document.querySelector('style');
+        if (style && style.textContent.includes('animate-on-scroll')) {
+            style.textContent = style.textContent.replace('.animate-on-scroll { opacity: 1 !important; transform: none !important; }', '');
+        }
+    });</script>
+
+</head>
+
+<body class="bg-white text-gray-700 overflow-x-hidden font-body">
+
+    <!-- ================================================================
+         ACCESSIBILITY: Skip to Main Content Link
+         ================================================================ -->
+    <a href="#main-content" class="skip-link">
+        <span data-en="Skip to main content" data-es="Saltar al contenido principal"></span>
+    </a>
+
+    <!-- ================================================================
+         SECTION: NAVIGATION HEADER
+         Unified header component - identical across all pages
+         ================================================================ -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-axio-dark/95 backdrop-blur-md transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center gap-2 group" aria-label="Axionalytics Home">
+                    <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="50" cy="20" r="10" class="fill-purple-500"/>
+                        <circle cx="20" cy="80" r="10" class="fill-blue-600"/>
+                        <circle cx="80" cy="80" r="10" class="fill-orange-500"/>
+                        <line x1="50" y1="20" x2="20" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                        <line x1="50" y1="20" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                        <line x1="20" y1="80" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                    </svg>
+                    <span class="text-2xl font-heading font-bold text-white group-hover:text-axio-accent transition-colors">
+                        axionalytics
+                    </span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="./index.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Home" data-es="Inicio"></span>
+                    </a>
+                    <a href="./datatransformation.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Data Transformation" data-es="Transformación de Datos"></span>
+                    </a>
+                    <a href="./aitransformation.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="AI Integration" data-es="Integración de IA"></span>
+                    </a>
+                    <a href="./training.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Training" data-es="Capacitación"></span>
+                    </a>
+                    <a href="./about.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="About" data-es="Nosotros"></span>
+                    </a>
+                    <a href="./contact.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Contact" data-es="Contacto"></span>
+                    </a>
+                </div>
+
+                <!-- Right Side: CTA + Language Toggle -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle-desktop" class="lang-toggle" aria-label="Toggle language">
+                        <span class="lang-flag" data-en="🇺🇸" data-es="🇲🇽"></span>
+                        <span class="lang-text" data-en="EN" data-es="ES"></span>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <a href="#BOOKING_LINK" class="btn-primary">
+                        <span data-en="Free Assessment" data-es="Evaluación Gratis"></span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true">
+            <div class="px-4 py-6 space-y-4 bg-axio-charcoal">
+                <a href="./index.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Home" data-es="Inicio"></span>
+                </a>
+                <a href="./datatransformation.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Data Transformation" data-es="Transformación de Datos"></span>
+                </a>
+                <a href="./aitransformation.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="AI Integration" data-es="Integración de IA"></span>
+                </a>
+                <a href="./training.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Training" data-es="Capacitación"></span>
+                </a>
+                <a href="./about.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="About" data-es="Nosotros"></span>
+                </a>
+                <a href="./contact.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Contact" data-es="Contacto"></span>
+                </a>
+                
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <button id="lang-toggle-mobile" class="lang-toggle" aria-label="Toggle language">
+                        <span class="lang-flag" data-en="🇺🇸" data-es="🇲🇽"></span>
+                        <span class="lang-text" data-en="EN" data-es="ES"></span>
+                    </button>
+                    <a href="#BOOKING_LINK" class="btn-primary text-sm">
+                        <span data-en="Free Assessment" data-es="Evaluación Gratis"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================================
+         MAIN CONTENT
+         ================================================================ -->
+    <main id="main-content">
+
+        <!-- ============================================================
+             SECTION: HERO
+             Contact page hero
+             ============================================================ -->
+        <section class="relative pt-32 pb-16 bg-gradient-to-br from-axio-dark via-axio-primary to-axio-charcoal">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+                    <div class="inline-flex items-center gap-2 bg-axio-accent/20 text-axio-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <span data-en="Get In Touch" data-es="Contáctanos"></span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl font-heading font-bold text-white leading-tight mb-6">
+                        <span data-en="Let's Talk About Your" data-es="Hablemos Sobre Tus"></span>
+                        <span class="block text-axio-accent">
+                            <span data-en="Data Challenges" data-es="Desafíos de Datos"></span>
+                        </span>
+                    </h1>
+                    
+                    <p class="text-xl text-white/80">
+                        <span data-en="Free 30-minute assessment. ROI projections within 48 hours. No sales pressure." data-es="Evaluación gratuita de 30 minutos. Proyecciones de ROI en 48 horas. Sin presión de ventas."></span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Decorative gradient overlay at bottom -->
+            <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: CONTACT METHODS
+             Quick contact options grid
+             ============================================================ -->
+        <section class="py-16 bg-white -mt-10 relative z-10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <!-- Method 1: Email -->
+                    <a href="mailto:info@axionalytics.com" class="contact-method-card animate-on-scroll group">
+                        <div class="w-14 h-14 bg-gradient-to-br from-axio-secondary to-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-axio-dark mb-2">
+                            <span data-en="Email Us" data-es="Envíanos Email"></span>
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-2">
+                            <span data-en="Response within 24 hours" data-es="Respuesta en 24 horas"></span>
+                        </p>
+                        <span class="text-axio-secondary font-medium">info@axionalytics.com</span>
+                    </a>
+                    
+                    <!-- Method 2: WhatsApp -->
+                    <a href="#WHATSAPP" class="contact-method-card animate-on-scroll group" style="animation-delay: 0.1s;">
+                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-axio-dark mb-2">
+                            <span data-en="WhatsApp" data-es="WhatsApp"></span>
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-2">
+                            <span data-en="Quick questions welcome" data-es="Preguntas rápidas bienvenidas"></span>
+                        </p>
+                        <span class="text-green-600 font-medium">+1 (956) 207-9368</span>
+                    </a>
+                    
+                    <!-- Method 3: Book a Call -->
+                    <a href="#BOOKING_LINK" class="contact-method-card animate-on-scroll group" style="animation-delay: 0.2s;">
+                        <div class="w-14 h-14 bg-gradient-to-br from-axio-accent to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-axio-dark mb-2">
+                            <span data-en="Book a Call" data-es="Agendar Llamada"></span>
+                        </h3>
+                        <p class="text-gray-500 text-sm mb-2">
+                            <span data-en="30-min free assessment" data-es="Evaluación gratis de 30 min"></span>
+                        </p>
+                        <span class="text-axio-accent font-medium">
+                            <span data-en="Schedule Now →" data-es="Agendar Ahora →"></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: CONTACT FORM
+             Main contact form section
+             ============================================================ -->
+        <section class="py-20 bg-axio-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    
+                    <!-- Left: Form Info -->
+                    <div class="animate-on-scroll">
+                        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-axio-dark mb-6">
+                            <span data-en="Send Us a Message" data-es="Envíanos un Mensaje"></span>
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8">
+                            <span data-en="Tell us about your data challenges and goals. We'll get back to you within 24 hours with initial thoughts and next steps." data-es="Cuéntanos sobre tus desafíos y metas de datos. Te responderemos en 24 horas con ideas iniciales y próximos pasos."></span>
+                        </p>
+                        
+                        <!-- What to expect -->
+                        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                            <h3 class="font-heading font-bold text-axio-dark mb-4">
+                                <span data-en="What Happens Next?" data-es="¿Qué Pasa Después?"></span>
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-axio-accent/10 rounded-full flex items-center justify-center flex-shrink-0 text-axio-accent font-bold text-sm">1</div>
+                                    <div>
+                                        <span class="font-medium text-axio-dark">
+                                            <span data-en="We Review" data-es="Revisamos"></span>
+                                        </span>
+                                        <p class="text-gray-500 text-sm">
+                                            <span data-en="Our team reviews your message within 24 hours" data-es="Nuestro equipo revisa tu mensaje en 24 horas"></span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-axio-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 text-axio-secondary font-bold text-sm">2</div>
+                                    <div>
+                                        <span class="font-medium text-axio-dark">
+                                            <span data-en="Initial Assessment" data-es="Evaluación Inicial"></span>
+                                        </span>
+                                        <p class="text-gray-500 text-sm">
+                                            <span data-en="We send initial thoughts and questions" data-es="Enviamos ideas iniciales y preguntas"></span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-purple-500/10 rounded-full flex items-center justify-center flex-shrink-0 text-purple-500 font-bold text-sm">3</div>
+                                    <div>
+                                        <span class="font-medium text-axio-dark">
+                                            <span data-en="Strategy Call" data-es="Llamada de Estrategia"></span>
+                                        </span>
+                                        <p class="text-gray-500 text-sm">
+                                            <span data-en="Free 30-minute call to discuss solutions" data-es="Llamada gratis de 30 minutos para discutir soluciones"></span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Contact Form -->
+                    <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+                        <form id="contact-form" class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            
+                            <!-- Form Success Message (hidden by default) -->
+                            <div id="form-success" class="hidden text-center py-8">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-heading font-bold text-axio-dark mb-2">
+                                    <span data-en="Message Sent!" data-es="¡Mensaje Enviado!"></span>
+                                </h3>
+                                <p class="text-gray-600">
+                                    <span data-en="We'll get back to you within 24 hours." data-es="Te responderemos en 24 horas."></span>
+                                </p>
+                            </div>
+                            
+                            <!-- Form Fields -->
+                            <div id="form-fields" class="space-y-6">
+                                
+                                <!-- Name Field -->
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-axio-dark mb-2">
+                                        <span data-en="Full Name" data-es="Nombre Completo"></span> *
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        required
+                                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-axio-accent focus:border-transparent transition-all"
+                                        placeholder="John Smith"
+                                    >
+                                </div>
+                                
+                                <!-- Email Field -->
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-axio-dark mb-2">
+                                        <span data-en="Email Address" data-es="Correo Electrónico"></span> *
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        required
+                                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-axio-accent focus:border-transparent transition-all"
+                                        placeholder="john@company.com"
+                                    >
+                                </div>
+                                
+                                <!-- Company Field -->
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-axio-dark mb-2">
+                                        <span data-en="Company Name" data-es="Nombre de la Empresa"></span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="company" 
+                                        name="company" 
+                                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-axio-accent focus:border-transparent transition-all"
+                                        placeholder="Acme Corp"
+                                    >
+                                </div>
+                                
+                                <!-- Service Interest -->
+                                <div>
+                                    <label for="service" class="block text-sm font-medium text-axio-dark mb-2">
+                                        <span data-en="What are you interested in?" data-es="¿Qué te interesa?"></span>
+                                    </label>
+                                    <select 
+                                        id="service" 
+                                        name="service" 
+                                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-axio-accent focus:border-transparent transition-all bg-white"
+                                    >
+                                        <option value="" data-en="Select a service..." data-es="Selecciona un servicio...">Select a service...</option>
+                                        <option value="data-transformation" data-en="Data Transformation" data-es="Transformación de Datos">Data Transformation</option>
+                                        <option value="ai-integration" data-en="AI Integration" data-es="Integración de IA">AI Integration</option>
+                                        <option value="training" data-en="Team Training" data-es="Capacitación de Equipo">Team Training</option>
+                                        <option value="multiple" data-en="Multiple Services" data-es="Múltiples Servicios">Multiple Services</option>
+                                        <option value="not-sure" data-en="Not Sure Yet" data-es="No estoy seguro aún">Not Sure Yet</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Message Field -->
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-axio-dark mb-2">
+                                        <span data-en="Tell us about your challenges" data-es="Cuéntanos sobre tus desafíos"></span> *
+                                    </label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        required
+                                        rows="4"
+                                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-axio-accent focus:border-transparent transition-all resize-none"
+                                        placeholder="What data challenges are you facing? What are your goals?"
+                                    ></textarea>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <button 
+                                    type="submit" 
+                                    class="btn-primary w-full text-lg py-4 flex items-center justify-center gap-2"
+                                >
+                                    <span data-en="Send Message" data-es="Enviar Mensaje"></span>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+                                
+                                <p class="text-center text-gray-500 text-sm">
+                                    <span data-en="Or prefer to talk?" data-es="¿Prefieres hablar?"></span>
+                                    <a href="#BOOKING_LINK" class="text-axio-accent hover:underline ml-1">
+                                        <span data-en="Book a free call" data-es="Agenda una llamada gratis"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: FAQ PREVIEW
+             Quick FAQ for contact page
+             ============================================================ -->
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl font-heading font-bold text-axio-dark mb-4">
+                        <span data-en="Quick Questions" data-es="Preguntas Rápidas"></span>
+                    </h2>
+                </div>
+                
+                <!-- FAQ Accordion -->
+                <div class="space-y-4">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="How much does the initial assessment cost?" data-es="¿Cuánto cuesta la evaluación inicial?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="Nothing! Our 30-minute initial assessment is completely free. We'll discuss your challenges, goals, and whether we're a good fit before any commitment." data-es="¡Nada! Nuestra evaluación inicial de 30 minutos es completamente gratis. Discutiremos tus desafíos, metas y si somos una buena opción antes de cualquier compromiso."></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="How quickly can you start a project?" data-es="¿Qué tan rápido pueden comenzar un proyecto?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="We can typically start within 1-2 weeks of agreement. For urgent needs, we offer expedited timelines. First insights usually come within 48 hours of project kick-off." data-es="Típicamente podemos comenzar dentro de 1-2 semanas del acuerdo. Para necesidades urgentes, ofrecemos plazos acelerados. Los primeros insights usualmente llegan en 48 horas del inicio del proyecto."></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item animate-on-scroll" style="animation-delay: 0.2s;">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="Do you work with businesses outside the US?" data-es="¿Trabajan con empresas fuera de EE.UU.?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="Absolutely! We work with clients across North America and Latin America. Our team is fully bilingual (English/Spanish) and comfortable with remote collaboration across time zones." data-es="¡Absolutamente! Trabajamos con clientes en toda Norteamérica y Latinoamérica. Nuestro equipo es completamente bilingüe (inglés/español) y cómodo con colaboración remota en diferentes zonas horarias."></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================================================================
+         SECTION: FOOTER
+         Unified footer component - identical across all pages
+         ================================================================ -->
+    <footer class="bg-axio-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Footer Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Column 1: Brand -->
+                <div class="lg:col-span-1">
+                    <a href="./index.html" class="flex items-center gap-2 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="20" r="10" class="fill-purple-500"/>
+                            <circle cx="20" cy="80" r="10" class="fill-blue-600"/>
+                            <circle cx="80" cy="80" r="10" class="fill-orange-500"/>
+                            <line x1="50" y1="20" x2="20" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                            <line x1="50" y1="20" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                            <line x1="20" y1="80" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                        </svg>
+                        <span class="text-xl font-heading font-bold">axionalytics</span>
+                    </a>
+                    <p class="text-white/70 text-sm mb-4">
+                        <span data-en="Enterprise-grade analytics and AI integration without the enterprise price tag." data-es="Analítica e integración de IA de nivel empresarial sin el precio empresarial."></span>
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="#LINKEDIN" class="text-white/60 hover:text-axio-accent transition-colors" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="#WHATSAPP" class="text-white/60 hover:text-axio-accent transition-colors" aria-label="WhatsApp">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#INSTAGRAM" class="text-white/60 hover:text-axio-accent transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Services -->
+                <div>
+                    <h4 class="font-heading font-bold mb-4">
+                        <span data-en="Services" data-es="Servicios"></span>
+                    </h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li><a href="./datatransformation.html" class="hover:text-axio-accent transition-colors"><span data-en="Data Transformation" data-es="Transformación de Datos"></span></a></li>
+                        <li><a href="./aitransformation.html" class="hover:text-axio-accent transition-colors"><span data-en="AI Integration" data-es="Integración de IA"></span></a></li>
+                        <li><a href="./training.html" class="hover:text-axio-accent transition-colors"><span data-en="Team Training" data-es="Capacitación"></span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Company -->
+                <div>
+                    <h4 class="font-heading font-bold mb-4">
+                        <span data-en="Company" data-es="Empresa"></span>
+                    </h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li><a href="./about.html" class="hover:text-axio-accent transition-colors"><span data-en="About Us" data-es="Nosotros"></span></a></li>
+                        <li><a href="./contact.html" class="hover:text-axio-accent transition-colors"><span data-en="Contact" data-es="Contacto"></span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="font-heading font-bold mb-4">
+                        <span data-en="Get in Touch" data-es="Contáctanos"></span>
+                    </h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li>
+                            <a href="mailto:info@axionalytics.com" class="hover:text-axio-accent transition-colors">
+                                info@axionalytics.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#BOOKING_LINK" class="inline-flex items-center gap-2 text-axio-accent hover:text-orange-400 transition-colors font-medium">
+                                <span data-en="Book a Call" data-es="Agendar Llamada"></span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm">
+                <p>© 2026 Axionalytics. <span data-en="All rights reserved." data-es="Todos los derechos reservados."></span></p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors"><span data-en="Privacy Policy" data-es="Política de Privacidad"></span></a>
+                    <a href="#" class="hover:text-white transition-colors"><span data-en="Terms of Service" data-es="Términos de Servicio"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================================================
+         JAVASCRIPT
+         Unified module + Contact form handler
+         ================================================================ -->
+    <script src="./js/main.js"></script>
+    
+    <!-- Contact Form Handler -->
+    <script>
+        // Contact form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In production, replace this with your actual form submission
+            // Options: Formspree, Netlify Forms, custom API endpoint
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Log to console (for testing)
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            document.getElementById('form-fields').classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+            
+            // Optional: Reset after 5 seconds to allow another submission
+            setTimeout(() => {
+                document.getElementById('form-fields').classList.remove('hidden');
+                document.getElementById('form-success').classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+
+</body>
+</html>

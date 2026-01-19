@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================================
+AXIONALYTICS - AI INTEGRATION PAGE (aitransformation.html)
+Version: 2.0.0 | Last Updated: January 2026
+
+DEPLOYMENT: Ready for GitHub Pages
+FRAMEWORK: Tailwind CSS via CDN + Unified CSS (css/styles.css)
+JAVASCRIPT: Unified module (js/main.js)
+
+================================================================================
+UPDATE INSTRUCTIONS:
+================================================================================
+
+1. BOOKING LINKS (Google Calendar):
+   - Search for: href="#BOOKING_LINK"
+   - Replace with your Google Calendar appointment scheduling link
+   - Example: href="https://calendar.google.com/calendar/appointments/YOUR_LINK"
+
+2. SOCIAL MEDIA LINKS:
+   - Search for: href="#LINKEDIN", href="#WHATSAPP", href="#INSTAGRAM"
+   - Replace with your actual social media URLs
+
+3. CONTACT EMAIL:
+   - Search for: info@axionalytics.com
+   - Replace with your preferred contact email
+
+4. IMAGES:
+   - Replace Unsplash placeholder URLs with your actual images
+   - Recommended sizes noted in comments
+
+================================================================================
+PAGE SECTIONS:
+- Skip Link (Accessibility)
+- Header/Navigation (Unified)
+- Hero Section (AI-themed gradient)
+- Problem/Solution Section
+- AI Services Grid (ChatGPT, Automation, Custom Solutions)
+- AI Tools Carousel
+- Pricing Section (3 tiers)
+- FAQ Accordion
+- CTA Section
+- Footer (Unified)
+================================================================================
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Integration Services by Axionalytics. Custom ChatGPT solutions, workflow automation, and AI-powered business tools. Enterprise AI without the enterprise price.">
+    <meta name="keywords" content="AI integration, ChatGPT business solutions, workflow automation, AI consulting, machine learning, business AI">
+    <meta name="author" content="Axionalytics">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="AI Integration | Axionalytics">
+    <meta property="og:description" content="Custom AI solutions that actually work. ChatGPT integration, workflow automation, and AI-powered tools for growing businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.axionalytics.com/aitransformation">
+    
+    <title>AI Integration | Axionalytics - Custom AI Solutions for Business</title>
+    
+    <!-- Favicon: Axionalytics data node/network logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='20' r='8' fill='%238B5CF6'/><circle cx='20' cy='80' r='8' fill='%232563EB'/><circle cx='80' cy='80' r='8' fill='%23F97316'/><line x1='50' y1='20' x2='20' y2='80' stroke='%231E3A5F' stroke-width='4'/><line x1='50' y1='20' x2='80' y2='80' stroke='%231E3A5F' stroke-width='4'/><line x1='20' y1='80' x2='80' y2='80' stroke='%231E3A5F' stroke-width='4'/></svg>">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'axio': {
+                            'primary': '#1E3A5F',
+                            'secondary': '#2563EB',
+                            'accent': '#F97316',
+                            'dark': '#0F172A',
+                            'charcoal': '#1E293B',
+                            'slate': '#334155',
+                            'light': '#F8FAFC',
+                            'purple': '#8B5CF6',
+                            'green': '#10B981',
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Plus Jakarta Sans', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Unified Stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Critical CSS Fallback (ensures content is visible even if external CSS/JS fails) -->
+    <style>
+        /* Bilingual system */
+        [data-lang-en] { display: inline !important; }
+        [data-lang-es] { display: none !important; }
+        div[data-lang-en], p[data-lang-en], h1[data-lang-en], h2[data-lang-en], h3[data-lang-en], h4[data-lang-en], li[data-lang-en] { display: block !important; }
+        html.lang-es [data-lang-en] { display: none !important; }
+        html.lang-es [data-lang-es] { display: inline !important; }
+        html.lang-es div[data-lang-es], html.lang-es p[data-lang-es], html.lang-es h1[data-lang-es], html.lang-es h2[data-lang-es], html.lang-es h3[data-lang-es], html.lang-es h4[data-lang-es], html.lang-es li[data-lang-es] { display: block !important; }
+    </style>
+    <!-- Remove fallback styles once JS loads -->
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        var style = document.querySelector('style');
+        if (style && style.textContent.includes('animate-on-scroll')) {
+            style.textContent = style.textContent.replace('.animate-on-scroll { opacity: 1 !important; transform: none !important; }', '');
+        }
+    });</script>
+
+</head>
+
+<body class="bg-white text-gray-700 overflow-x-hidden font-body">
+
+    <!-- ================================================================
+         ACCESSIBILITY: Skip to Main Content Link
+         ================================================================ -->
+    <a href="#main-content" class="skip-link">
+        <span data-en="Skip to main content" data-es="Saltar al contenido principal"></span>
+    </a>
+
+    <!-- ================================================================
+         SECTION: NAVIGATION HEADER
+         Unified header component - identical across all pages
+         ================================================================ -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-axio-dark/95 backdrop-blur-md transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center gap-2 group" aria-label="Axionalytics Home">
+                    <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="50" cy="20" r="10" class="fill-purple-500"/>
+                        <circle cx="20" cy="80" r="10" class="fill-blue-600"/>
+                        <circle cx="80" cy="80" r="10" class="fill-orange-500"/>
+                        <line x1="50" y1="20" x2="20" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                        <line x1="50" y1="20" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                        <line x1="20" y1="80" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                    </svg>
+                    <span class="text-2xl font-heading font-bold text-white group-hover:text-axio-accent transition-colors">
+                        axionalytics
+                    </span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="./index.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Home" data-es="Inicio"></span>
+                    </a>
+                    <a href="./datatransformation.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Data Transformation" data-es="Transformación de Datos"></span>
+                    </a>
+                    <a href="./aitransformation.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="AI Integration" data-es="Integración de IA"></span>
+                    </a>
+                    <a href="./training.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Training" data-es="Capacitación"></span>
+                    </a>
+                    <a href="./about.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="About" data-es="Nosotros"></span>
+                    </a>
+                    <a href="./contact.html" data-nav-link class="text-white/90 hover:text-white font-medium transition-colors">
+                        <span data-en="Contact" data-es="Contacto"></span>
+                    </a>
+                </div>
+
+                <!-- Right Side: CTA + Language Toggle -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle-desktop" class="lang-toggle" aria-label="Toggle language">
+                        <span class="lang-flag" data-en="🇺🇸" data-es="🇲🇽"></span>
+                        <span class="lang-text" data-en="EN" data-es="ES"></span>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <a href="#BOOKING_LINK" class="btn-primary">
+                        <span data-en="Free Assessment" data-es="Evaluación Gratis"></span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true">
+            <div class="px-4 py-6 space-y-4 bg-axio-charcoal">
+                <a href="./index.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Home" data-es="Inicio"></span>
+                </a>
+                <a href="./datatransformation.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Data Transformation" data-es="Transformación de Datos"></span>
+                </a>
+                <a href="./aitransformation.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="AI Integration" data-es="Integración de IA"></span>
+                </a>
+                <a href="./training.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Training" data-es="Capacitación"></span>
+                </a>
+                <a href="./about.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="About" data-es="Nosotros"></span>
+                </a>
+                <a href="./contact.html" data-nav-link class="block text-white/90 hover:text-white font-medium py-2">
+                    <span data-en="Contact" data-es="Contacto"></span>
+                </a>
+                
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <button id="lang-toggle-mobile" class="lang-toggle" aria-label="Toggle language">
+                        <span class="lang-flag" data-en="🇺🇸" data-es="🇲🇽"></span>
+                        <span class="lang-text" data-en="EN" data-es="ES"></span>
+                    </button>
+                    <a href="#BOOKING_LINK" class="btn-primary text-sm">
+                        <span data-en="Free Assessment" data-es="Evaluación Gratis"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================================================
+         MAIN CONTENT
+         ================================================================ -->
+    <main id="main-content">
+
+        <!-- ============================================================
+             SECTION: HERO
+             AI-themed gradient background with neural network visual
+             ============================================================ -->
+        <section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-axio-dark via-purple-900 to-axio-primary">
+            
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <!-- Neural network nodes -->
+                <div class="absolute top-20 left-10 w-4 h-4 bg-purple-500 rounded-full animate-pulse opacity-60"></div>
+                <div class="absolute top-40 right-20 w-3 h-3 bg-axio-accent rounded-full animate-pulse opacity-50" style="animation-delay: 0.5s;"></div>
+                <div class="absolute bottom-40 left-1/4 w-5 h-5 bg-blue-500 rounded-full animate-pulse opacity-40" style="animation-delay: 1s;"></div>
+                <div class="absolute top-1/3 right-1/3 w-4 h-4 bg-green-500 rounded-full animate-pulse opacity-50" style="animation-delay: 1.5s;"></div>
+                <div class="absolute bottom-20 right-10 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-60" style="animation-delay: 2s;"></div>
+                
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-axio-dark/80 via-transparent to-transparent"></div>
+            </div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Hero Text -->
+                    <div class="text-center lg:text-left animate-on-scroll">
+                        <div class="inline-flex items-center gap-2 bg-purple-500/20 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+                            </svg>
+                            <span data-en="AI-Powered Solutions" data-es="Soluciones con IA"></span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
+                            <span data-en="AI That Actually" data-es="IA Que Realmente"></span>
+                            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-axio-accent to-purple-400">
+                                <span data-en="Works for You" data-es="Trabaja Para Ti"></span>
+                            </span>
+                        </h1>
+                        
+                        <p class="text-xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
+                            <span data-en="Stop experimenting with AI tools that don't fit. Get custom ChatGPT solutions, workflow automation, and AI integrations designed for YOUR business." data-es="Deja de experimentar con herramientas de IA que no encajan. Obtén soluciones personalizadas de ChatGPT, automatización de flujos y integraciones de IA diseñadas para TU negocio."></span>
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#BOOKING_LINK" class="btn-primary text-lg px-8 py-4">
+                                <span data-en="Get AI Assessment" data-es="Obtener Evaluación de IA"></span>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </a>
+                            <a href="#services" class="btn-secondary text-lg px-8 py-4">
+                                <span data-en="Explore Services" data-es="Ver Servicios"></span>
+                            </a>
+                        </div>
+                        
+                        <!-- Trust Indicators -->
+                        <div class="mt-10 flex items-center gap-8 justify-center lg:justify-start text-white/60 text-sm">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="No coding required" data-es="Sin programación"></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="48-hour setup" data-es="Configuración en 48h"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Visual: AI Brain Illustration -->
+                    <div class="relative hidden lg:block animate-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="relative w-full aspect-square max-w-lg mx-auto">
+                            <!-- Glowing orb background -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-axio-accent/30 rounded-full blur-3xl"></div>
+                            
+                            <!-- Central brain/AI icon -->
+                            <div class="relative flex items-center justify-center h-full">
+                                <div class="w-64 h-64 bg-gradient-to-br from-purple-600 to-axio-accent rounded-3xl rotate-45 flex items-center justify-center shadow-2xl">
+                                    <div class="-rotate-45">
+                                        <svg class="w-32 h-32 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Orbiting elements -->
+                                <div class="absolute top-8 right-8 w-16 h-16 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center animate-float">
+                                    <span class="text-2xl">🤖</span>
+                                </div>
+                                <div class="absolute bottom-8 left-8 w-16 h-16 bg-white/10 backdrop-blur rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 1s;">
+                                    <span class="text-2xl">⚡</span>
+                                </div>
+                                <div class="absolute top-1/2 -right-4 w-12 h-12 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center animate-float" style="animation-delay: 2s;">
+                                    <span class="text-xl">💡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: PROBLEM/SOLUTION
+             Pain points businesses face with AI adoption
+             ============================================================ -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <!-- Problem Side -->
+                    <div class="animate-on-scroll">
+                        <div class="inline-flex items-center gap-2 bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="The Problem" data-es="El Problema"></span>
+                        </div>
+                        
+                        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-axio-dark mb-6">
+                            <span data-en="AI Promises a Lot But Delivers Confusion" data-es="La IA Promete Mucho Pero Entrega Confusión"></span>
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                <span class="text-2xl">😫</span>
+                                <div>
+                                    <h3 class="font-semibold text-axio-dark">
+                                        <span data-en="Tool Overload" data-es="Sobrecarga de Herramientas"></span>
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">
+                                        <span data-en="ChatGPT, Claude, Gemini, Copilot... Which one? And how do you actually use it for YOUR work?" data-es="ChatGPT, Claude, Gemini, Copilot... ¿Cuál? ¿Y cómo lo usas realmente para TU trabajo?"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                <span class="text-2xl">🔥</span>
+                                <div>
+                                    <h3 class="font-semibold text-axio-dark">
+                                        <span data-en="Wasted Hours" data-es="Horas Perdidas"></span>
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">
+                                        <span data-en="Your team spends more time figuring out prompts than actually getting work done." data-es="Tu equipo pasa más tiempo descubriendo prompts que realmente trabajando."></span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                <span class="text-2xl">💸</span>
+                                <div>
+                                    <h3 class="font-semibold text-axio-dark">
+                                        <span data-en="Expensive Experiments" data-es="Experimentos Costosos"></span>
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">
+                                        <span data-en="Subscriptions pile up, but nobody's really using them effectively." data-es="Las suscripciones se acumulan, pero nadie las usa efectivamente."></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Solution Side -->
+                    <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="inline-flex items-center gap-2 bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span data-en="Our Approach" data-es="Nuestro Enfoque"></span>
+                        </div>
+                        
+                        <h2 class="text-3xl sm:text-4xl font-heading font-bold text-axio-dark mb-6">
+                            <span data-en="AI That's Actually Useful From Day One" data-es="IA Realmente Útil Desde el Día Uno"></span>
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                <span class="text-2xl">🎯</span>
+                                <div>
+                                    <h3 class="font-semibold text-axio-dark">
+                                        <span data-en="Custom Solutions" data-es="Soluciones Personalizadas"></span>
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">
+                                        <span data-en="We build AI tools tailored to your specific workflows, not generic one-size-fits-all." data-es="Construimos herramientas de IA adaptadas a tus flujos específicos, no genéricas."></span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                <span class="text-2xl">⚡</span>
+                                <div>
+                                    <h3 class="font-semibold text-axio-dark">
+                                        <span data-en="Ready-to-Use" data-es="Listo Para Usar"></span>
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">
+                                        <span data-en="Pre-built prompts, automated workflows, and integrations that work from day one." data-es="Prompts pre-construidos, flujos automatizados e integraciones que funcionan desde el día uno."></span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                <span class="text-2xl">📈</span>
+                                <div>
+                                    <h3 class="font-semibold text-axio-dark">
+                                        <span data-en="Measurable ROI" data-es="ROI Medible"></span>
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">
+                                        <span data-en="We track time saved and productivity gains so you know exactly what you're getting." data-es="Rastreamos tiempo ahorrado y ganancias de productividad para que sepas exactamente lo que obtienes."></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: AI SERVICES GRID
+             Three main AI service offerings
+             ============================================================ -->
+        <section id="services" class="py-20 bg-axio-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-on-scroll">
+                    <div class="inline-flex items-center gap-2 bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+                        </svg>
+                        <span data-en="Our AI Services" data-es="Nuestros Servicios de IA"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-axio-dark mb-4">
+                        <span data-en="AI Solutions That Drive Results" data-es="Soluciones de IA Que Generan Resultados"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <span data-en="From ChatGPT customization to full workflow automation, we implement AI that actually helps your team work smarter." data-es="Desde personalización de ChatGPT hasta automatización completa de flujos, implementamos IA que realmente ayuda a tu equipo a trabajar más inteligentemente."></span>
+                    </p>
+                </div>
+                
+                <!-- Services Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1: Custom GPT Solutions -->
+                    <div class="service-card animate-on-scroll">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-axio-dark mb-3">
+                            <span data-en="Custom GPT Solutions" data-es="Soluciones GPT Personalizadas"></span>
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            <span data-en="Pre-trained AI assistants that understand your business, your terminology, and your workflows. No prompt engineering required." data-es="Asistentes de IA pre-entrenados que entienden tu negocio, tu terminología y tus flujos de trabajo. Sin necesidad de ingeniería de prompts."></span>
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Custom knowledge bases" data-es="Bases de conocimiento personalizadas"></span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Brand voice training" data-es="Entrenamiento de voz de marca"></span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Team deployment & training" data-es="Despliegue y capacitación del equipo"></span>
+                            </li>
+                        </ul>
+                        <a href="#BOOKING_LINK" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center gap-2 transition-colors">
+                            <span data-en="Learn More" data-es="Saber Más"></span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Service 2: Workflow Automation -->
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="w-16 h-16 bg-gradient-to-br from-axio-accent to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-axio-dark mb-3">
+                            <span data-en="Workflow Automation" data-es="Automatización de Flujos"></span>
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            <span data-en="Connect your tools with AI-powered automation. From email triage to document processing, we eliminate the repetitive tasks." data-es="Conecta tus herramientas con automatización impulsada por IA. Desde triaje de emails hasta procesamiento de documentos, eliminamos las tareas repetitivas."></span>
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Zapier/Make integrations" data-es="Integraciones Zapier/Make"></span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Document processing" data-es="Procesamiento de documentos"></span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Email & calendar automation" data-es="Automatización de email y calendario"></span>
+                            </li>
+                        </ul>
+                        <a href="#BOOKING_LINK" class="text-axio-accent font-semibold hover:text-orange-600 inline-flex items-center gap-2 transition-colors">
+                            <span data-en="Learn More" data-es="Saber Más"></span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Service 3: AI Strategy & Training -->
+                    <div class="service-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-gradient-to-br from-axio-secondary to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-axio-dark mb-3">
+                            <span data-en="AI Strategy & Training" data-es="Estrategia y Capacitación en IA"></span>
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            <span data-en="Not sure where to start? We assess your operations and create a roadmap for AI adoption that makes sense for your business." data-es="¿No sabes por dónde empezar? Evaluamos tus operaciones y creamos una hoja de ruta para la adopción de IA que tenga sentido para tu negocio."></span>
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="AI readiness assessment" data-es="Evaluación de preparación para IA"></span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Implementation roadmap" data-es="Hoja de ruta de implementación"></span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-600">
+                                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span data-en="Team workshops" data-es="Talleres para equipos"></span>
+                            </li>
+                        </ul>
+                        <a href="#BOOKING_LINK" class="text-axio-secondary font-semibold hover:text-blue-700 inline-flex items-center gap-2 transition-colors">
+                            <span data-en="Learn More" data-es="Saber Más"></span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: PRICING
+             Three pricing tiers for AI services
+             ============================================================ -->
+        <section id="pricing" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-on-scroll">
+                    <div class="inline-flex items-center gap-2 bg-axio-accent/10 text-axio-accent px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-14a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 7.586V4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span data-en="Pricing" data-es="Precios"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-axio-dark mb-4">
+                        <span data-en="AI Investment Packages" data-es="Paquetes de Inversión en IA"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <span data-en="Transparent pricing, no hidden fees. Choose the package that fits your needs." data-es="Precios transparentes, sin costos ocultos. Elige el paquete que se ajuste a tus necesidades."></span>
+                    </p>
+                </div>
+                
+                <!-- Pricing Grid -->
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Tier 1: AI Starter -->
+                    <div class="pricing-card animate-on-scroll">
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-heading font-bold text-axio-dark mb-2">
+                                <span data-en="AI Starter" data-es="IA Inicial"></span>
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                <span data-en="Perfect for getting started" data-es="Perfecto para comenzar"></span>
+                            </p>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-4xl font-heading font-bold text-axio-dark">$1,500</span>
+                                <span class="text-gray-500">USD</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="1 Custom GPT assistant" data-es="1 Asistente GPT personalizado"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="Basic prompt library" data-es="Biblioteca básica de prompts"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="2-hour team training" data-es="Capacitación de 2 horas"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="30 days email support" data-es="30 días de soporte por email"></span>
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#BOOKING_LINK" class="btn-secondary w-full text-center">
+                            <span data-en="Get Started" data-es="Comenzar"></span>
+                        </a>
+                    </div>
+                    
+                    <!-- Tier 2: AI Professional (Popular) -->
+                    <div class="pricing-card pricing-popular animate-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <span class="bg-gradient-to-r from-purple-600 to-axio-accent text-white text-sm font-semibold px-4 py-1 rounded-full">
+                                <span data-en="Most Popular" data-es="Más Popular"></span>
+                            </span>
+                        </div>
+                        
+                        <div class="text-center mb-6 pt-4">
+                            <h3 class="text-xl font-heading font-bold text-axio-dark mb-2">
+                                <span data-en="AI Professional" data-es="IA Profesional"></span>
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                <span data-en="Best value for growing teams" data-es="Mejor valor para equipos en crecimiento"></span>
+                            </p>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-4xl font-heading font-bold text-axio-dark">$4,500</span>
+                                <span class="text-gray-500">USD</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="3 Custom GPT assistants" data-es="3 Asistentes GPT personalizados"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="5 automated workflows" data-es="5 flujos automatizados"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="Full-day workshop" data-es="Taller de día completo"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="90 days priority support" data-es="90 días de soporte prioritario"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="ROI tracking dashboard" data-es="Panel de seguimiento de ROI"></span>
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#BOOKING_LINK" class="btn-primary w-full text-center">
+                            <span data-en="Get Started" data-es="Comenzar"></span>
+                        </a>
+                    </div>
+                    
+                    <!-- Tier 3: AI Enterprise -->
+                    <div class="pricing-card animate-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-heading font-bold text-axio-dark mb-2">
+                                <span data-en="AI Enterprise" data-es="IA Empresarial"></span>
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">
+                                <span data-en="Full AI transformation" data-es="Transformación IA completa"></span>
+                            </p>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-4xl font-heading font-bold text-axio-dark">
+                                    <span data-en="Custom" data-es="A medida"></span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="Unlimited GPT assistants" data-es="Asistentes GPT ilimitados"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="Custom API integrations" data-es="Integraciones API personalizadas"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="Dedicated AI consultant" data-es="Consultor IA dedicado"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="12 months support & updates" data-es="12 meses de soporte y actualizaciones"></span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">
+                                    <span data-en="SLA guarantee" data-es="Garantía SLA"></span>
+                                </span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#BOOKING_LINK" class="btn-secondary w-full text-center">
+                            <span data-en="Contact Sales" data-es="Contactar Ventas"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: FAQ
+             Frequently asked questions about AI services
+             ============================================================ -->
+        <section id="faq" class="py-20 bg-axio-light">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-axio-dark mb-4">
+                        <span data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes"></span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        <span data-en="Everything you need to know about our AI services" data-es="Todo lo que necesitas saber sobre nuestros servicios de IA"></span>
+                    </p>
+                </div>
+                
+                <!-- FAQ Accordion -->
+                <div class="space-y-4">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="Do I need technical knowledge to use AI tools?" data-es="¿Necesito conocimientos técnicos para usar herramientas de IA?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="Not at all! We design our AI solutions specifically for non-technical users. Everything comes with pre-built prompts, simple interfaces, and comprehensive training. If you can use email, you can use our AI tools." data-es="¡Para nada! Diseñamos nuestras soluciones de IA específicamente para usuarios no técnicos. Todo viene con prompts pre-construidos, interfaces simples y capacitación completa. Si puedes usar email, puedes usar nuestras herramientas de IA."></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="How long does implementation take?" data-es="¿Cuánto tiempo toma la implementación?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="Most custom GPT solutions are ready within 48-72 hours. Full workflow automation projects typically take 1-2 weeks depending on complexity. Enterprise implementations are scoped individually." data-es="La mayoría de las soluciones GPT personalizadas están listas en 48-72 horas. Los proyectos de automatización de flujos completos típicamente toman 1-2 semanas dependiendo de la complejidad. Las implementaciones empresariales se evalúan individualmente."></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item animate-on-scroll" style="animation-delay: 0.2s;">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="Is my data secure with AI tools?" data-es="¿Están seguros mis datos con herramientas de IA?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="Absolutely. We use enterprise-grade AI platforms with strict data privacy policies. Your data is never used to train public AI models, and we can configure private instances for sensitive industries." data-es="Absolutamente. Usamos plataformas de IA de nivel empresarial con políticas estrictas de privacidad de datos. Tus datos nunca se usan para entrenar modelos públicos de IA, y podemos configurar instancias privadas para industrias sensibles."></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item animate-on-scroll" style="animation-delay: 0.3s;">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span class="text-left font-semibold text-axio-dark">
+                                <span data-en="What kind of ROI can I expect?" data-es="¿Qué tipo de ROI puedo esperar?"></span>
+                            </span>
+                            <svg class="faq-icon w-5 h-5 text-axio-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-content" aria-hidden="true">
+                            <p class="text-gray-600 pb-4">
+                                <span data-en="Our clients typically see 10-20 hours saved per employee per month on repetitive tasks. For a team of 10, that's 100-200 hours/month of productivity gains. We provide ROI tracking so you can measure the actual impact." data-es="Nuestros clientes típicamente ven 10-20 horas ahorradas por empleado por mes en tareas repetitivas. Para un equipo de 10, eso son 100-200 horas/mes de ganancias de productividad. Proporcionamos seguimiento de ROI para que puedas medir el impacto real."></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION: CTA
+             Final call-to-action section
+             ============================================================ -->
+        <section class="py-20 bg-gradient-to-br from-purple-900 via-axio-dark to-axio-primary relative overflow-hidden">
+            <!-- Background decoration -->
+            <div class="absolute inset-0">
+                <div class="absolute top-10 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-40 h-40 bg-axio-accent/20 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
+                        <span data-en="Ready to Put AI to Work?" data-es="¿Listo Para Poner la IA a Trabajar?"></span>
+                    </h2>
+                    <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                        <span data-en="Get a free 30-minute assessment. We'll show you exactly how AI can improve your specific workflows and give you ROI projections within 48 hours." data-es="Obtén una evaluación gratuita de 30 minutos. Te mostraremos exactamente cómo la IA puede mejorar tus flujos específicos y te daremos proyecciones de ROI en 48 horas."></span>
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#BOOKING_LINK" class="btn-primary text-lg px-8 py-4">
+                            <span data-en="Book Free AI Assessment" data-es="Reservar Evaluación Gratis"></span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="./contact.html" class="btn-secondary text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10">
+                            <span data-en="Contact Us" data-es="Contáctanos"></span>
+                        </a>
+                    </div>
+                    
+                    <p class="text-white/60 text-sm mt-6">
+                        <span data-en="No commitment required. Just a conversation about your possibilities." data-es="Sin compromiso requerido. Solo una conversación sobre tus posibilidades."></span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================================================================
+         SECTION: FOOTER
+         Unified footer component - identical across all pages
+         ================================================================ -->
+    <footer class="bg-axio-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Footer Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Column 1: Brand -->
+                <div class="lg:col-span-1">
+                    <a href="./index.html" class="flex items-center gap-2 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="20" r="10" class="fill-purple-500"/>
+                            <circle cx="20" cy="80" r="10" class="fill-blue-600"/>
+                            <circle cx="80" cy="80" r="10" class="fill-orange-500"/>
+                            <line x1="50" y1="20" x2="20" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                            <line x1="50" y1="20" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                            <line x1="20" y1="80" x2="80" y2="80" stroke="#1E3A5F" stroke-width="4"/>
+                        </svg>
+                        <span class="text-xl font-heading font-bold">axionalytics</span>
+                    </a>
+                    <p class="text-white/70 text-sm mb-4">
+                        <span data-en="Enterprise-grade analytics and AI integration without the enterprise price tag." data-es="Analítica e integración de IA de nivel empresarial sin el precio empresarial."></span>
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="#LINKEDIN" class="text-white/60 hover:text-axio-accent transition-colors" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="#WHATSAPP" class="text-white/60 hover:text-axio-accent transition-colors" aria-label="WhatsApp">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#INSTAGRAM" class="text-white/60 hover:text-axio-accent transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Services -->
+                <div>
+                    <h4 class="font-heading font-bold mb-4">
+                        <span data-en="Services" data-es="Servicios"></span>
+                    </h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li><a href="./datatransformation.html" class="hover:text-axio-accent transition-colors"><span data-en="Data Transformation" data-es="Transformación de Datos"></span></a></li>
+                        <li><a href="./aitransformation.html" class="hover:text-axio-accent transition-colors"><span data-en="AI Integration" data-es="Integración de IA"></span></a></li>
+                        <li><a href="./training.html" class="hover:text-axio-accent transition-colors"><span data-en="Team Training" data-es="Capacitación"></span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Company -->
+                <div>
+                    <h4 class="font-heading font-bold mb-4">
+                        <span data-en="Company" data-es="Empresa"></span>
+                    </h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li><a href="./about.html" class="hover:text-axio-accent transition-colors"><span data-en="About Us" data-es="Nosotros"></span></a></li>
+                        <li><a href="./contact.html" class="hover:text-axio-accent transition-colors"><span data-en="Contact" data-es="Contacto"></span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="font-heading font-bold mb-4">
+                        <span data-en="Get in Touch" data-es="Contáctanos"></span>
+                    </h4>
+                    <ul class="space-y-2 text-white/70 text-sm">
+                        <li>
+                            <a href="mailto:info@axionalytics.com" class="hover:text-axio-accent transition-colors">
+                                info@axionalytics.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#BOOKING_LINK" class="inline-flex items-center gap-2 text-axio-accent hover:text-orange-400 transition-colors font-medium">
+                                <span data-en="Book a Call" data-es="Agendar Llamada"></span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm">
+                <p>© 2026 Axionalytics. <span data-en="All rights reserved." data-es="Todos los derechos reservados."></span></p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors"><span data-en="Privacy Policy" data-es="Política de Privacidad"></span></a>
+                    <a href="#" class="hover:text-white transition-colors"><span data-en="Terms of Service" data-es="Términos de Servicio"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================================================
+         JAVASCRIPT
+         Unified module handles all interactive components
+         ================================================================ -->
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
